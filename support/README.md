@@ -8,21 +8,21 @@ All browser assets are local; no package install or build is required.
 From the repository root:
 
 ```sh
-python3 -m http.server 4175 --directory backend/public
+python3 -m http.server 4175
 ```
 
-Open http://localhost:4175/support/.
+Open http://localhost:4175/.
 
 ## Deployment
 
-The existing backend serves `backend/public` as static files. Deploy with the
-normal backend release, or copy the contents of `support/` to any static host.
+Use the repository root as the static host document root. Deploy `index.html`,
+`privacy-and-support.html`, and the `support/` directory together.
 The HTML uses relative links so the site can run at a domain root or subdirectory.
 No backend/API or account login is required to browse the site.
 
 App Store URL paths (prepend your deployed HTTPS domain):
 
-- Marketing: `/support/index.html`
+- Marketing: `/index.html`
 - Support: `/support/contact.html`
 - Privacy: `/support/privacy.html`
 - Terms: `/support/terms.html`
